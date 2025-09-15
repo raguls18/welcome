@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Dashboard</title>
+    <link rel="stylesheet" href="./front/welcome-styles.css">
+</head>
+<body>
+    <div class="welcome-container">
+        <header class="header">
+            <h1>Welcome to Your Dashboard</h1>
+            <button id="signOutBtn" class="sign-out-btn">Sign Out</button>
+        </header>
+        
+        <main class="main-content">
+            <div class="welcome-card">
+                <!-- User Profile Section -->
+                <div class="user-info">
+                    <div class="avatar">
+                        <span id="userInitial">U</span>
+                    </div>
+                    <div class="user-details">
+                        <h2 id="userName">Welcome!</h2>
+                        <p id="userEmail">user@example.com</p>
+                        <span class="user-status">Active Member</span>
+                    </div>
+                </div>
+                
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon credit">💰</div>
+                        <div class="stat-info">
+                            <h3 id="creditPoints">2,450</h3>
+                            <p>Credit Points</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon level">⭐</div>
+                        <div class="stat-info">
+                            <h3 id="userLevel">Gold</h3>
+                            <p>Member Level</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon activities">📊</div>
+                        <div class="stat-info">
+                            <h3 id="totalActivities">47</h3>
+                            <p>Total Activities</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon achievements">🏆</div>
+                        <div class="stat-info">
+                            <h3 id="achievements">12</h3>
+                            <p>Achievements</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Actions -->
+                <div class="section-title">
+                    <h3>Quick Actions</h3>
+                </div>
+                
+                <div class="dashboard-actions">
+                    <div class="action-card">
+                        <div class="action-icon">👤</div>
+                        <h4>Profile Settings</h4>
+                        <p>Manage your account settings and preferences</p>
+                        <button class="action-btn">Manage Profile</button>
+                    </div>
+                    
+                    <div class="action-card">
+                        <div class="action-icon">💳</div>
+                        <h4>Credit Points</h4>
+                        <p>View and redeem your credit points</p>
+                        <button class="action-btn">View Points</button>
+                    </div>
+                    
+                    <div class="action-card">
+                        <div class="action-icon">📈</div>
+                        <h4>Analytics</h4>
+                        <p>View your dashboard and analytics</p>
+                        <button class="action-btn">View Analytics</button>
+                    </div>
+                    
+                    <div class="action-card">
+                        <div class="action-icon">🎯</div>
+                        <h4>Goals</h4>
+                        <p>Track your progress and set new goals</p>
+                        <button class="action-btn">View Goals</button>
+                    </div>
+                    
+                    <div class="action-card">
+                        <div class="action-icon">🔔</div>
+                        <h4>Notifications</h4>
+                        <p>Check your recent notifications</p>
+                        <button class="action-btn">View All</button>
+                    </div>
+                    
+                    <div class="action-card">
+                        <div class="action-icon">⚙️</div>
+                        <h4>Settings</h4>
+                        <p>Configure your application settings</p>
+                        <button class="action-btn">Open Settings</button>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="section-title">
+                    <h3>Recent Activity</h3>
+                </div>
+                
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon earned">+</div>
+                        <div class="activity-details">
+                            <p><strong>Earned 50 points</strong></p>
+                            <span>Completed daily challenge</span>
+                        </div>
+                        <div class="activity-time">2 hours ago</div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon spent">-</div>
+                        <div class="activity-details">
+                            <p><strong>Redeemed 100 points</strong></p>
+                            <span>Premium feature unlock</span>
+                        </div>
+                        <div class="activity-time">1 day ago</div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon achievement">🏆</div>
+                        <div class="activity-details">
+                            <p><strong>New Achievement</strong></p>
+                            <span>Reached Gold level</span>
+                        </div>
+                        <div class="activity-time">3 days ago</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"></script>
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="welcome.js"></script>
+</body>
+</html>

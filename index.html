@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Auth - Login & Register</title>
+    <link rel="stylesheet" href="./front/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-wrapper">
+            <!-- Login Form -->
+            <div id="login-form" class="form-container active">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <div class="input-group">
+                        <input type="email" id="loginEmail" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="loginPassword" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="auth-btn">Login</button>
+                    <div class="error-message" id="loginError"></div>
+                </form>
+                <p class="switch-form">Don't have an account? <a href="#" id="showRegister">Register here</a></p>
+            </div>
+
+            <!-- Register Form -->
+            <div id="register-form" class="form-container">
+                <h2>Register</h2>
+                <form id="registerForm">
+                    <div class="input-group">
+                        <input type="text" id="registerName" placeholder="Full Name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="registerEmail" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="registerPassword" placeholder="Password" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    </div>
+                    <button type="submit" class="auth-btn">Register</button>
+                    <div class="error-message" id="registerError"></div>
+                </form>
+                <p class="switch-form">Already have an account? <a href="#" id="showLogin">Login here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"></script>
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="auth.js"></script>
+</body>
+</html>
