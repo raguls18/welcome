@@ -1,147 +1,105 @@
-AIM: To test the e-commerce application and report the defects in it.
-PROCEDURE:
-Defect 1: Incorrect Product Search
-Defect Aim: Verify that the product search functionality returns correct results.
-Test Steps:
- Navigate to the e-commerce website's homepage.
- Enter "Laptop" in the search bar.
- Click the search button.
- Verify that search results are displayed.
+AIM:
+ To apply the design thinking process for a new product.
+ALGORITHM / PROCEDURE:
+1. Understand the Product Concept
+ Begin by clearly understanding the proposed product idea, its purpose, target users, and unique
+selling points.
+ Example: Smart Attendance App for colleges.
+2. Gather a Diverse Team
+ Form a brainstorming team consisting of members from different backgrounds such as product 
+development, design, marketing, and users.
+ This helps in generating ideas from multiple perspectives.
+3. Set Clear Objectives
+ Define the goals of the brainstorming session.
+ Determine what problems the product should solve and what features are required.
+Example Objective:
+ To develop features that makes attendance marking faster and more accurate.
+4. Warm-Up or Icebreaker
+ Begin the brainstorming session with a short warm-up activity to encourage creative thinking and 
+open discussion among team members.
+5. Idea Generation
+ Allow team members to freely suggest feature ideas.
+Encourage the rule “No idea is a bad idea.”
+ Ideas can be collected using:
+ Mind mapping
+ Sticky notes
+ Whiteboard discussions
+ Brainstorming softwa
+6. Categorize and Prioritize
 
+Group similar ideas together and prioritize them based on:
 
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
+• Feasibility
 
-public class DefectSearchTest {
-    public static void main(String[] args) {
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://www.example-ecommerce.com");
+• Impact on users
 
-        // DEFECT: Wrong element ID
-        WebElement searchInput = driver.findElement(By.id("wrong-search-input"));
-        searchInput.sendKeys("Laptop");
-        driver.findElement(By.id("search-button")).click();
+• Alignment with product goals
 
-        WebElement results = driver.findElement(By.id("search-results"));
-        System.out.println(results.isDisplayed() ? "Results displayed." : "Defect: Results not displayed.");
-        driver.quit();
-    }
-}
-DEFECT OUTPUT:
+7. SWOT Analysis
 
-Defect: Search results not displayed.
+Conduct a SWOT analysis (Strengths, Weaknesses, Opportunities, Threats) for each feature idea to 
 
-correct test code:
+evaluate its potential value.
 
+8. Feasibility Assessment
 
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
+ Evaluate whether the proposed features can be implemented based on technical capability, budget, and 
 
-public class ProductSearchTest {
-    public static void main(String[] args) {
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://www.example-ecommerce.com");
+available resources.
 
-        // CORRECT: Right element ID
-        WebElement searchInput = driver.findElement(By.id("search-input"));
-        searchInput.sendKeys("Laptop");
-        driver.findElement(By.id("search-button")).click();
+9. Market Research
 
-        WebElement results = driver.findElement(By.id("search-results"));
-        System.out.println(results.isDisplayed() ? "Search results displayed." : "Defect: Results not displayed.");
-        driver.quit();
-    }
-}
+ Perform market research to understand user preferences, competitor features, and market trends.
 
-EXPECTED OUTPUT
+10. Prototype and User Testing
 
-Search results displayed.
+ Develop simple prototypes or mockups of the proposed features and test them with users to collect 
 
+feedback.
 
+11. Cost–Benefit Analysis
 
+Compare the development cost of each feature with its expected benefits such as improved user 
 
+experience, efficiency, or revenue generation.
 
+12. Risk Assessment
 
+Identify potential risks associated with each feature and plan strategies to minimize those risks.
 
+13. Finalize Feature Set
 
-    AIM
-To build a BDD (Behavior Driven Development) framework using Selenium, Cucumber, and TestNG for automating login functionality
+Based on all evaluations, finalize the set of features that will be included in the final product.
 
+14. Documentation
 
-PROCEDURE
-Create a Maven project in Eclipse/IntelliJ
+Document the selected features, their objectives, and the reason for selecting them.
 
-Add dependencies (Selenium, TestNG, Cucumber)
+This helps guide the development process.
+ 15. Iterate if Necessary
 
-Create Page Object class (LoginPage.java)
+If new feedback or insights are obtained, repeat the brainstorming process and refine the feature ideas 
 
-Create Feature file (login.feature)
+accordingly.
 
-Write Step Definitions
+Example
 
-Configure TestNG XML
+Consider a team developing a mobile messaging application. During the brainstorming session, the team 
 
-Write Selenium automation code
+generates several feature ideas such as:
 
-Run using TestNG Suite
+• End-to-End Encryption – To ensure secure communication and protect user privacy.
 
-Update driver path and URL
+• Message Scheduling – Allows users to send messages at a scheduled time.
 
-Enhance with reports and parallel execution
+• Reaction Emojis – Enables users to react to messages with emojis.
 
+• Dark Mode – Provides a dark interface suitable for night usage.
 
+• Polls and Surveys – Allows users to conduct polls within chats.
 
-LoginPage.java
+• Auto Translate – Automatically translates messages for users communicating in different languages.
 
-class LoginPage {
- WebDriver driver;
+After evaluating feasibility, user benefits, and market demand, the team selects the most suitable features 
 
- LoginPage(WebDriver d){ driver = d; }
-
- void open() { driver.get("http://yourapp.com"); }
- void login(String u, String p){
-   driver.findElement(By.id("username")).sendKeys(u);
-   driver.findElement(By.id("password")).sendKeys(p);
-   driver.findElement(By.id("loginButton")).click();
- }
-}
-
-Feature: Login
-
-Scenario: Valid login
-Given User is on login page
-When User enters valid credentials
-Then Login successful
-
-StepDefinitions.java
-
-WebDriver driver;
-LoginPage lp;
-
-@Given("User is on login page")
-public void openPage(){
- driver = new ChromeDriver();
- lp = new LoginPage(driver);
- lp.open();
-}
-
-@When("User enters valid credentials")
-public void login(){
- lp.login("admin","admin123");
-}
-
-@Then("Login successful")
-public void success(){
- driver.quit();
-}
-
-
-testng.xml
-
-<suite name="Suite">
- <test name="BDD Test">
-  <classes>
-   <class name="io.cucumber.testng.CucumberRunner"/>
-  </classes>
- </test>
-</suite>
+for implementation in the messaging application.
