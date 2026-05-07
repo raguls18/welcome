@@ -1,105 +1,63 @@
-AIM:
- To apply the design thinking process for a new product.
-ALGORITHM / PROCEDURE:
-1. Understand the Product Concept
- Begin by clearly understanding the proposed product idea, its purpose, target users, and unique
-selling points.
- Example: Smart Attendance App for colleges.
-2. Gather a Diverse Team
- Form a brainstorming team consisting of members from different backgrounds such as product 
-development, design, marketing, and users.
- This helps in generating ideas from multiple perspectives.
-3. Set Clear Objectives
- Define the goals of the brainstorming session.
- Determine what problems the product should solve and what features are required.
-Example Objective:
- To develop features that makes attendance marking faster and more accurate.
-4. Warm-Up or Icebreaker
- Begin the brainstorming session with a short warm-up activity to encourage creative thinking and 
-open discussion among team members.
-5. Idea Generation
- Allow team members to freely suggest feature ideas.
-Encourage the rule “No idea is a bad idea.”
- Ideas can be collected using:
- Mind mapping
- Sticky notes
- Whiteboard discussions
- Brainstorming softwa
-6. Categorize and Prioritize
+Aim:
+To create a Cloud Organization in AWS with Roll-based access control.
+Procedure:
+To create an organization in AWS with role-based access ,you can follow these general steps:
+1. Create an AWS account: If you don't already have an AWS account, you'll need to create one.
+This will be your management account and the root of your organization.
+2. Enable AWS Organizations: From the AWS Management Console, navigate to the AWS
+Organizations service and enable it. This will create the organization with your management
+account as the master account.
+ 3. Create OUs (Organizational Units): You can create one or more OUs to organize your
 
-Group similar ideas together and prioritize them based on:
+accounts. For example, you might create separate OUs for different departments or environments
 
-• Feasibility
+(e.g., production, staging, development).
 
-• Impact on users
+4. Create member accounts: You can create new AWS accounts and invite existing accounts
 
-• Alignment with product goals
+to join your organization as member accounts. You can add these accounts to the appropriate
 
-7. SWOT Analysis
+OUs.
 
-Conduct a SWOT analysis (Strengths, Weaknesses, Opportunities, Threats) for each feature idea to 
+5. Create service control policies (SCPs): SCPs are policies that you can attach to OUs or
 
-evaluate its potential value.
+individual accounts to define the maximum set of actions that can be performed on resources in
 
-8. Feasibility Assessment
+those OUs or accounts. This allows you to enforce role- based access and other security policies
 
- Evaluate whether the proposed features can be implemented based on technical capability, budget, and 
+across your organization.
 
-available resources.
+6. Assign IAM roles: You can create IAM roles in your management account and delegate
 
-9. Market Research
+specific permissions to them. You can then assume these roles from your member accounts to 
 
- Perform market research to understand user preferences, competitor features, and market trends.
+perform actions on resources in the management account or other member accounts.
 
-10. Prototype and User Testing
+7. Configure permissions: You can use IAM policies to control access to AWS services and 
 
- Develop simple prototypes or mockups of the proposed features and test them with users to collect 
+resources. You can attach these policies to IAM users, groups, or roles in your management 
 
-feedback.
+account or member accounts
+To create a role with specific permissions, you can follow these steps:
 
-11. Cost–Benefit Analysis
+• Open the IAM console in your management account.
 
-Compare the development cost of each feature with its expected benefits such as improved user 
+• Create a new role and choose the appropriate trusted entity (e.g., another AWS account, an AWS
 
-experience, efficiency, or revenue generation.
+service, or your AWS Organizations).
 
-12. Risk Assessment
+• Define the permissions for the role by attaching an IAM policy or a service control policy(SCP).
 
-Identify potential risks associated with each feature and plan strategies to minimize those risks.
+• Save the role and noted own the ARN (Amazon Resource Name)of the role.
 
-13. Finalize Feature Set
+• In the AWS Organizations console, attach the role to the appropriate OU or account.
 
-Based on all evaluations, finalize the set of features that will be included in the final product.
+• In the member account, assume the role to perform actions on resources in the management
 
-14. Documentation
+account or other member accounts.
 
-Document the selected features, their objectives, and the reason for selecting them.
+Result:
 
-This helps guide the development process.
- 15. Iterate if Necessary
+Thus, the Cloud Organization was created in AWS with Role-Based Access Control was
 
-If new feedback or insights are obtained, repeat the brainstorming process and refine the feature ideas 
-
-accordingly.
-
-Example
-
-Consider a team developing a mobile messaging application. During the brainstorming session, the team 
-
-generates several feature ideas such as:
-
-• End-to-End Encryption – To ensure secure communication and protect user privacy.
-
-• Message Scheduling – Allows users to send messages at a scheduled time.
-
-• Reaction Emojis – Enables users to react to messages with emojis.
-
-• Dark Mode – Provides a dark interface suitable for night usage.
-
-• Polls and Surveys – Allows users to conduct polls within chats.
-
-• Auto Translate – Automatically translates messages for users communicating in different languages.
-
-After evaluating feasibility, user benefits, and market demand, the team selects the most suitable features 
-
-for implementation in the messaging application.
+implemented successfull
