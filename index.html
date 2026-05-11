@@ -1,38 +1,82 @@
+
+
+Experiment: Data Transfer Operation using Arduino and Python
 Aim
-To implement OpenStack using Rackspace Private Cloud Software (RPC) and display the cloud service status using a Python program.
-Procedure
-Open Python IDLE or VS Code.
-Create a new Python file.
-Type the Python program.
-Save the file with .py extension.
-Run the program.
-Observe the output.
-Python Program
+To write a Python program to perform data transfer operation with Arduino using serial communication.
+
+Required Items
+Arduino IDE
+
 Python
-service = "OpenStack Service"
-package_name = "Rackspace Private Cloud Software"
 
-print("Implementation of OpenStack using RPC")
-print("-------------------------------------")
+PySerial
 
-print("Package Name :", package_name)
-print("Service Name :", service)
+Arduino Uno
 
-print(service, "is running successfully")
-print("Cloud resources are managed successfully")
+USB cable
 
-print("OpenStack implementation completed")
+Computer/Laptop
+p
+Algorithm
+Start the program.
+
+Connect Arduino to the computer.
+
+Open serial communication using COM port.
+
+Send data from Python to Arduino.
+
+Arduino receives the data.
+
+Display the received data in Serial Monitor.
+
+Stop the program.
+
+Arduino Program
+void setup() {
+    Serial.begin(9600);
+}
+
+void loop() {
+    if (Serial.available() > 0) {
+        char data = Serial.read();
+        Serial.print("Received Data: ");
+        Serial.println(data);
+    }
+}
+Python Program
+import serial
+import time
+
+# Open serial port
+arduino = serial.Serial('COM3', 9600)
+
+time.sleep(2)
+
+# Send data
+arduino.write(b'A')
+
+print("Data Sent Successfully")
+
+arduino.close(
+Procedure
+Install Arduino IDE in the computer.
+
+Connect the Arduino Uno using USB cable.
+
+Upload the Arduino program into Arduino board.
+
+Install PySerial library using command:
+
+pip install pyserial
+Open Python IDE (Spyder/IDLE).
+
+Run the Python program.
+
+Observe the Serial Monitor output in Arduino IDE.
+
 Output
-Plain text
-Implementation of OpenStack using RPC
--------------------------------------
-
-Package Name : Rackspace Private Cloud Software
-Service Name : OpenStack Service
-
-OpenStack Service is running successfully
-Cloud resources are managed successfully
-
-OpenStack implementation completed
+Data Sent Successfully
+Received Data: A
 Result
-Thus, the OpenStack implementation using Rackspace Private Cloud Software (RPC) was executed successfully using Python.
+Thus, the data transfer operation between Python and Arduino using serial communication was successfully performed.
